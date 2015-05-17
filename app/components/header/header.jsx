@@ -14,6 +14,7 @@ var App = React.createClass({
             <li className="active"><Link to="app">Home</Link></li>
             <li><Link to="about">About</Link></li>
             <li><Link to="contact">Contact</Link></li>
+            <li><Link to="todos">Todos</Link></li>
           </ul>
           <h3 className="text-muted">React</h3>
   		</div>
