@@ -22,14 +22,7 @@
 
 
     <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">React</h3>
-      </div>
+      <div id="header"></div>
 
       <div id="home"></div>
 
@@ -57,6 +50,7 @@
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
     <script src="bower_components/react/react.js"></script>
     <script src="bower_components/react/JSXTransformer.js"></script>
+    <script src="bower_components/react-router/build/umd/ReactRouter.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -71,8 +65,11 @@
     </script>
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
-        <script src="scripts/main.js"></script>
         <script src="components/home/home.jsx" type="text/jsx"></script>
+        <script src="components/about/about.jsx" type="text/jsx"></script>
+        <script src="components/contact/contact.jsx" type="text/jsx"></script>
+        <script src="components/header/header.jsx" type="text/jsx"></script>
+        <script src="scripts/main.jsx" type="text/jsx"></script>
         <!-- endbuild -->
 </body>
 </html>
