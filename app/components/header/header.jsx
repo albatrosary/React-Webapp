@@ -1,10 +1,3 @@
-var Router = ReactRouter;
-
-var DefaultRoute = Router.DefaultRoute;
-var Link = Router.Link;
-var Route = Router.Route;
-var RouteHandler = Router.RouteHandler;
-
 var App = React.createClass({
   render: function () {
     return (
