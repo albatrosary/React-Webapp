@@ -1,43 +1,21 @@
-var todoData = ['aaaa', 'cccc'];
-
-var TodoList = React.createClass({
-  propTypes: {
-    // 削除するための処理をI/Fとして定義
-    onDelete: React.PropTypes.func.isRequired
-  },
-  removeTodo: function (todo) {
-    this.props.onDelete(todo);
-  },
-  render: function() {
-    var _this = this;
-    var rows = this.props.todos.map(function(todo) {
-      return (
-        <p key={todo} className="input-group">
-          <input type="text" className="form-control" value={todo} />
-          <span className="input-group-btn">
-            <button className="btn btn-danger" onClick={ _this.removeTodo.bind(this, todo) } aria-label="Remove">X</button>
-          </span>
-        </p>
-      );
-    });
-    return (
-      <div>{rows}</div>
-    );
-  }
-});
-
 var Todos = React.createClass({
+  getInitialState: function () {
+    return { todoData: ['aaaa', 'cccc'] };
+  },
   addTodo: function(e) {
     e.preventDefault();
     var val = this.refs.todo.getDOMNode().value.trim();
     this.refs.todo.getDOMNode().value = '';
-    todoData.push(val);
-    this.setState({ todoData: todoData});
+    var data = this.state.todoData;
+    data.push(val);
+    this.setState({ todoData: data });
+
   },
   deleteTodo: function (todo) {
-    var i = todoData.indexOf(todo);
-    todoData.splice(i, 1);
-    this.setState({ todoData: todoData});
+    var data = this.state.todoData;
+    var i = data.indexOf(todo);
+    data.splice(i, 1);
+    this.setState({ todoData: data });
   },
   render: function () {
     return (
@@ -55,7 +33,7 @@ var Todos = React.createClass({
           </div>
         </form>
         {/* Todos list */}
-        <TodoList todos={todoData} onDelete={ this.deleteTodo } />
+        <Todo todos={ this.state.todoData } onDelete={ this.deleteTodo } />
       </div>
     );
   }
